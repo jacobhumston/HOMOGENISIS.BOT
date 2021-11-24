@@ -7,14 +7,15 @@ module.exports = {
     version: "v1.0.pre-beta",
     staffPermissionRequirement: "ADMINISTRATOR",
     client: {
-        token: "",
+        token: require("./token.json"),
         intents: [
             "GUILDS",
             "GUILD_MEMBERS",
         ],
+        guilds: [],
         activity: {
             type: "WATCHING",
-            content: "fun events.",
+            name: "fun events.",
         },
         status: "",
     },
