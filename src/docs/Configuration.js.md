@@ -92,6 +92,6 @@ Twitch or YouTube stream url, only required if `client.activity.type` is `STREAM
 
 **`client.status`** *string ([PresenceStatusData](https://discord.js.org/#/docs/main/stable/typedef/PresenceStatusData))* 
 
-Client status, leave as an empty string or `null` to defult to `online`
+Client status, leave as an empty string or `null` to default to `online`
 
 ---
