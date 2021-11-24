@@ -44,7 +44,7 @@ Below are details on each property of configuration.
 > }
 > ```
 
-**`client.intents`** - *string[] ([IntentsResolvable](https://discord.js.org/#/docs/main/stable/typedef/IntentsResolvable))* - Client intents, its advised to not change this unless neccserry ([learn more...](https://discordjs.guide/popular-topics/intents.html#gateway-intents))
+**`client.intents`** - *string[] ([IntentsResolvable](https://discord.js.org/#/docs/main/stable/typedef/IntentsResolvable))* - Client intents, its advised to not change this unless necessary ([learn more...](https://discordjs.guide/popular-topics/intents.html#gateway-intents))
 
 **`client.guilds`** *string[]* - An array of guild ids that you want the bot to be used in, the bot will leave any other guilds that have not been specified here **(if the array is empty the bot will not leave any guilds)**
 
