@@ -4,6 +4,7 @@
  */
 module.exports = {
     version: "v1.0.pre-beta",
+    prefix: "!",
     client: {
         token: "",
         activity: {
