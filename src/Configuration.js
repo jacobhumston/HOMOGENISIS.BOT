@@ -8,7 +8,10 @@ module.exports = {
     staffPermissionRequirement: "ADMINISTRATOR",
     client: {
         token: "",
-        intents: [],
+        intents: [
+            "GUILDS",
+            "GUILD_MEMBERS",
+        ],
         activity: {
             type: "WATCHING",
             content: "fun events.",
