@@ -1,5 +1,5 @@
 # docs / Confgiuration.js
-Doccumentation for `src/Configuration.js`.
+Documentation for `src/Configuration.js`.
 
 ## About
 This file is used for easy customization of the project, while also holding some important information such as tokens.
