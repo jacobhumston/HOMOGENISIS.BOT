@@ -16,6 +16,7 @@ module.exports = {
         activity: {
             type: "WATCHING",
             name: "fun events.",
+            url: "",
         },
         status: "",
     },

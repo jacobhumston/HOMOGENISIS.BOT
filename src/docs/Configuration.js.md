@@ -21,6 +21,7 @@ module.exports = {
         activity: {
             type: "",
             name: "",
+            url: "",
         },
         status: "",
     },
@@ -50,6 +51,8 @@ Below are details on each property of configuration.
 
 **`client.activity.type`** *string ([ActivityType](https://discord.js.org/#/docs/main/stable/typedef/ActivityType))* - Type of activity, leave as an empty string or `null` for no activity
 
-**`client.activity.name`** *string* - Activity name, required if `client.activity.type` is not an empty string and not`null`
+**`client.activity.name`** *string* - Activity name, required if `client.activity.type` is not an empty string and not `null`
+
+**`client.activity.url`** *string* - Twitch or YouTube stream url, only required if `client.activity.type` is `STREAMING`
 
 **`client.status`** - *string ([PresenceStatusData](https://discord.js.org/#/docs/main/stable/typedef/PresenceStatusData))* - Client status, leave as an empty string or `null` to defult to `online`
