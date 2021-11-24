@@ -38,7 +38,7 @@ Below are details on each property of configuration.
 
 **`client.token`** *string* - Client token, this is the password of the bot ([learn more...](https://discordjs.guide/preparations/setting-up-a-bot-application.html#your-token))
 
-> The default configuration requires a `token.json` file under the `src` directory. You can create one like so:
+> The default configuration requires a `token.json` file under the `src` directory. The contents of the file should be like the following:
 > ```json
 > {
 >   "token"
