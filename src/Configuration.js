@@ -1,21 +1,18 @@
 /** 
  * @module
- * Configuration Module
- * @tutorial
- * [Click Here](./docs/Configuration.md)
+ * Configuration Module 
+ * [Docs](./docs/Configuration.js.md)
  */
 module.exports = {
     version: "v1.0.pre-beta",
+    staffPermissionRequirement: "ADMINISTRATOR",
     client: {
         token: "",
+        intents: [],
         activity: {
-            switchRate: 1,
-            activities: [
-                {
-                    type: "WATCHING",
-                    content: "fun events.",
-                },
-            ],
+            type: "WATCHING",
+            content: "fun events.",
         },
+        status: "",
     },
 };
