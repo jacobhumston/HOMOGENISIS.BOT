@@ -1,10 +1,11 @@
 /** 
  * @module
  * Configuration Module
+ * @tutorial
+ * [Click Here](./docs/Configuration.md)
  */
 module.exports = {
     version: "v1.0.pre-beta",
-    prefix: "!",
     client: {
         token: "",
         activity: {
