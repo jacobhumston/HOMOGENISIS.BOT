@@ -10,7 +10,7 @@ module.exports = {
     leaveGuilds: async function (Client, Config) {
         // Some basic param checks
         if (!Client) throw "Client is required.";
-        if (!Config) throw "Config is required."
+        if (!Config) throw "Config is required.";
 
         // Loop through the client's guilds and leave any not matching the ID
         let Guilds = await Client.guilds.fetch();
