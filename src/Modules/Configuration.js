@@ -1,3 +1,9 @@
+/**
+ * @module
+ * Configuration
+ * @description
+ * An object containing all of the bot's configuration
+ */
 module.exports = {
     version: "v1.0.pre-beta",
     permissions: {
