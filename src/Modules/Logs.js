@@ -13,14 +13,14 @@ module.exports = {
      * @returns {void}
      */
     log: function (Type, Message) {
-        // Some basic param checks
+        // some basic param checks
         if (!Type) throw "Type is required.";
         if (!Message) throw "Message is required."
 
-        // Log the message in console
+        // log the message in console
         console.log(`[${Type}] ${Message}`);
 
-        // Return void
+        // return void
         return;
     },
 };
