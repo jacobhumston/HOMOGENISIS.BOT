@@ -1,12 +1,3 @@
----
-name: Pull request
-about: Create a pull request
-title: "[PULL REQUEST] <Title>"
-labels: 
-assignees: jacobhumston
-
----
-  
 # Fixes
 List all fixes if any 
   
