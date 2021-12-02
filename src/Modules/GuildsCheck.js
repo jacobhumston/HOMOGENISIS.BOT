@@ -1,3 +1,6 @@
+// Require needed modules
+const LogsModule = require("./Logs.js");
+
 /**
  * @module
  * GuildsCheck
@@ -19,14 +22,26 @@ module.exports = {
         if (!Config) throw "Config is required.";
         if (!Log) Log = false;
 
-        // Loop through the client's guilds and leave any not matching the ID found in config
+        // Log that the guild check started if log is enabled
+        if (Log) LogsModule.log("log", `Guild check started!`);
+        
+        // fetch the client's guilds
         let Guilds = await Client.guilds.fetch();
+        
+        // loop through the guilds of the client using the function that turns the collection into an array
         for (const Guild of Guilds.values()) {
+            // check if the guild ID matches the one found in config 
             if (Guild.id !== Config.client.guildID) {
-                await Guild.leave();
+                // leave the guild if it doesnt match the ID found in config
+                const LeftGuild = await Guild.leave();
+                // log the guild that the bot left if log is enabled
+                if (Log) LogsModule.log("log", `Left guild called ${LeftGuild.name}!`);
             };
         };
 
+        // Log that the guild check finished if log is enabled
+        if (Log) LogsModule.log("log", `Guild check started!`);
+        
         // Return void
         return;
     },
