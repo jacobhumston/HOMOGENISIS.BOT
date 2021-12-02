@@ -11,7 +11,7 @@ module.exports = {
         staffRoleID: "914287882817114123",
         // role that is required to use staff commands
         developerUserID: "539194357706653696",
-        // role that is required to use developer commands
+        // user that is allowed to use developer commands
     },
     client: {
         token: require("../token.json"),
