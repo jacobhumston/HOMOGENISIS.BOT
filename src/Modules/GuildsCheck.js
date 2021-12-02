@@ -4,7 +4,7 @@ module.exports = {
      * Leave any guilds not found in config
      * 
      * @param {Discord.Client} Client
-     * @param {JSON} Config 
+     * @param {object} Config 
      * @returns {void}
      */
     leaveGuilds: async function (Client, Config) {
