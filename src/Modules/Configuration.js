@@ -1,6 +1,6 @@
 /**
  * @module
- * Configuration
+ * Configuration.js
  * @description
  * An object containing all of the bot's configuration
  */

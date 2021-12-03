@@ -1,6 +1,6 @@
 /**
  * @module
- * Logs
+ * Logs.js
  * @description
  * Functions used to log messages in console
  */
