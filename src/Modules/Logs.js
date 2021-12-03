@@ -8,6 +8,8 @@ module.exports = {
     /**
      * @description
      * Log a message in console
+     * @example
+     * Logs.log("log", "Hello world!");
      * @param {('log'|'warn'|'error')} Type - Type of log
      * @param {string} Message - Message to log 
      * @returns {void}

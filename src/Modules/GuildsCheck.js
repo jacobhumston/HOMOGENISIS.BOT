@@ -11,10 +11,12 @@ module.exports = {
     /** 
      * @description
      * Leave any guilds not found in config
+     * @example
+     * GuildsCheck.leaveGuilds(Discord.Client, require("./Configuration.js"), true);
      * @param {object} Client - Discord client object
      * @param {object} Config - Configuration object
      * @param {boolean} [Log=false] - Log guilds that are left
-     * @returns {void}
+     * @returns {Promise<void>}
      */
     leaveGuilds: async function (Client, Config, Log) {
         // some basic param checks
