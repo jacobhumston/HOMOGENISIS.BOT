@@ -16,6 +16,7 @@ module.exports = {
         // some basic param checks
         if (!Type) throw "Type is required.";
         if (!Message) throw "Message is required."
+        if (!Type.match('log|warn|error')) throw "Type must be 'log', 'warn', or 'error'.";
 
         // log the message in console
         console.log(`[${Type}] ${Message}`);
