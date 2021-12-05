@@ -3,7 +3,7 @@ const LogsModule = require("./Logs.js");
 
 /**
  * @module
- * GuildsCheck
+ * GuildsCheck.js
  * @description
  * Functions relating to the bot's guilds
  */

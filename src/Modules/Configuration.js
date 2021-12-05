@@ -1,11 +1,11 @@
 /**
  * @module
- * Configuration
+ * Configuration.js
  * @description
  * An object containing all of the bot's configuration
  */
 module.exports = {
-    version: "v1.1.pre-beta",
+    version: "v1.2.pre-beta",
     // current version of the bot
     permissions: {
         staffRoleID: "914287882817114123",
