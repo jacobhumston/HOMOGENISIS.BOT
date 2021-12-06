@@ -23,8 +23,8 @@ module.exports = {
         if (!Type.match('log|warn|error')) throw "Type must be 'log', 'warn', or 'error'.";
 
         // get the current time
-        let Time = new Date().toLocaleString([], { hour: 'numeric', minute: 'numeric', hour12: true });
-        
+        let Time = new Date().toLocaleString(null, { hour: 'numeric', minute: 'numeric', hour12: true });
+
         // log the message in console
         // this will output as (example): 
         // 5:00 PM | [ERROR: Logs]: something went wrong
