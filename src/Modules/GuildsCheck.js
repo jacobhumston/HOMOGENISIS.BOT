@@ -25,7 +25,7 @@ module.exports = {
         if (!Log) Log = false;
 
         // log that the guild check started if log is enabled
-        if (Log) LogsModule.log("log", `Guild check started!`);
+        if (Log) LogsModule.log("log", "GuildsCheck", `Guild check started!`);
         
         // fetch the client's guilds
         let Guilds = await Client.guilds.fetch();
@@ -37,12 +37,12 @@ module.exports = {
                 // leave the guild if it doesnt match the ID found in config
                 const LeftGuild = await Guild.leave();
                 // log the guild that the bot left if log is enabled
-                if (Log) LogsModule.log("log", `Left guild called ${LeftGuild.name}...`);
+                if (Log) LogsModule.log("log", "GuildsCheck", `Left guild called ${LeftGuild.name}...`);
             };
         };
 
         // log that the guild check finished if log is enabled
-        if (Log) LogsModule.log("log", `Guild check finished.`);
+        if (Log) LogsModule.log("log", "GuildsCheck", `Guild check finished.`);
         
         // return void
         return;
