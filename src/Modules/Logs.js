@@ -27,8 +27,8 @@ module.exports = {
         
         // log the message in console
         // this will output as (example): 
-        // 5:00 PM | [error: Logs]: something went wrong
-        console.log(`${Time} | [${Type}: ${Name}]: ${Message}`);
+        // 5:00 PM | [ERROR: Logs]: something went wrong
+        console.log(`${Time} | [${Type.toUpperCase()}: ${Name}]: ${Message}`);
 
         // return void
         return;
