@@ -7,6 +7,15 @@
 module.exports = {
     /**
      * @description
+     * object of colors for logs
+     */
+    colors: {
+        log: "\x1b[47m",
+        warn: "\x1b[43m",
+        error: "\x1b[41m",
+    },
+    /**
+     * @description
      * Log a message in console
      * @example
      * Logs.log("log", "Hello world!");
@@ -28,7 +37,7 @@ module.exports = {
         // log the message in console
         // this will output as (example): 
         // 5:00 PM | [ERROR: Logs]: something went wrong
-        console.log(`${Time} | [${Type.toUpperCase()}: ${Name}]: ${Message}`);
+        console.log(this.colors[Type], `${Time} | [${Type.toUpperCase()}: ${Name}]: ${Message}`);
 
         // return void
         return;
