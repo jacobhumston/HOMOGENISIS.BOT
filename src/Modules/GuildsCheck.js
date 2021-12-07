@@ -1,4 +1,4 @@
-// Require needed modules
+// require needed modules
 const LogsModule = require("./Logs.js");
 
 /**
