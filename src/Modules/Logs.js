@@ -10,9 +10,9 @@ module.exports = {
      * object of colors for logs
      */
     colors: {
-        log: "\x1b[47m",
-        warn: "\x1b[43m",
-        error: "\x1b[41m",
+        log: "\x1b[37m",
+        warn: "\x1b[33m",
+        error: "\x1b[31m",
     },
     /**
      * @description
