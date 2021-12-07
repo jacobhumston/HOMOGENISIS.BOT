@@ -1,7 +1,7 @@
 {
-  "name": "HOMOGENISISBOT",
-  "version": "1.0.0",
-  "description": "> This repository is under the [GNU General Public License v3.0](./LICENSE).",
+  "name": "HOMOGENISIS.BOT",
+  "version": "",
+  "description": "",
   "main": "index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
