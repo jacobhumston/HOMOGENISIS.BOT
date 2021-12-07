@@ -1,7 +1,6 @@
 {
   "name": "HOMOGENISIS.BOT",
-  "version": "",
-  "description": "",
+  "description": "**HOMOGENISIS.BOT is a Discord bot dedicated to the HOMOGENISIS Community Discord. *([Join Here](https://discord.gg/RyMkFzywsT))***",
   "main": "src/Start.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
@@ -20,5 +19,9 @@
   "dependencies": {
     "discord.js": "^13.3.1",
     "pretty-ms": "^7.0.1"
+  },
+  "version": "1.0.0",
+  "devDependencies": {
+    "node": "^16.13.1"
   }
 }

@@ -18,7 +18,7 @@ const Client = new Discord.Client({
 
 // client login
 Client.login(Configuration.client.token).catch(error => {
-    Logs.log("log", "Start", error);
+    Logs.log("error", "Start", error);
 });
 
 // log that the start file has finsihed being executed
