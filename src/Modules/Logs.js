@@ -10,8 +10,11 @@ module.exports = {
      * Object of colors for logs
      */
     colors: {
+        // white
         log: "\x1b[37m",
+        // yellow
         warn: "\x1b[33m",
+        // red
         error: "\x1b[31m",
     },
     /**
