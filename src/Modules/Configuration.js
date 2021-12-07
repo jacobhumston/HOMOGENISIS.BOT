@@ -14,7 +14,7 @@ module.exports = {
         // user that is allowed to use developer commands
     },
     client: {
-        token: require("../token.json").token,
+        token: require("./../token.json").token,
         // client token/password
         guildID: "837866184505294849",
         // guild that the client belongs in

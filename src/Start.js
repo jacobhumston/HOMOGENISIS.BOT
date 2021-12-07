@@ -16,6 +16,8 @@ const Client = new Discord.Client({
     intents: new Discord.Intents(32767),
 });
 
+
+
 // client login
 Client.login(Configuration.client.token).catch(error => {
     Logs.log("error", "Start", error);
