@@ -7,7 +7,7 @@
 module.exports = {
     /**
      * @description
-     * object of colors for logs
+     * Object of colors for logs
      */
     colors: {
         log: "\x1b[37m",
