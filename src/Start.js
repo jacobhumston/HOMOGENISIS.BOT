@@ -14,4 +14,4 @@ Logs.log("log", "Start", "Start.js is now being executed...");
 
 // log that the start file has finsihed being executed
 // use the date from the start of the file to say how long it took
-Logs.log("log", "Start", `Start.js has finished being executed in ${prettyMilliseconds(new Date().getTime - StartUpDate)}.`);
+Logs.log("log", "Start", `Start.js has finished being executed in ${prettyMilliseconds(new Date().getTime() - StartUpDate)}.`);

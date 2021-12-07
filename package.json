@@ -1,0 +1,23 @@
+{
+  "name": "HOMOGENISISBOT",
+  "version": "1.0.0",
+  "description": "> This repository is under the [GNU General Public License v3.0](./LICENSE).",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/jacobhumston/HOMOGENISIS.BOT.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/jacobhumston/HOMOGENISIS.BOT/issues"
+  },
+  "homepage": "https://github.com/jacobhumston/HOMOGENISIS.BOT#readme",
+  "dependencies": {
+    "pretty-ms": "^7.0.1"
+  }
+}
