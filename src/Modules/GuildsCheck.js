@@ -23,13 +23,13 @@ module.exports = {
         if (!Client) throw "Client is required.";
         if (!Config) throw "Config is required.";
         if (!Log) Log = false;
-
+ 
         // log that the guild check started if log is enabled
         if (Log) LogsModule.log("log", "GuildsCheck", `Guild check started!`);
-        
+
         // fetch the client's guilds
         let Guilds = await Client.guilds.fetch();
-        
+
         // loop through the guilds of the client using the function that turns the collection into an array
         for (const Guild of Guilds.values()) {
             // check if the guild ID matches the one found in config 
@@ -43,7 +43,7 @@ module.exports = {
 
         // log that the guild check finished if log is enabled
         if (Log) LogsModule.log("log", "GuildsCheck", `Guild check finished.`);
-        
+
         // return void
         return;
     },
