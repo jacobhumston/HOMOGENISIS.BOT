@@ -13,6 +13,7 @@ Logs.log("log", "Start", "Start.js is now being executed...");
 
 // create discord client
 const Client = new Discord.Client({
+    // for now we want all intents
     intents: new Discord.Intents(32767),
 });
 
