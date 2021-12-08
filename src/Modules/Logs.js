@@ -10,12 +10,9 @@ module.exports = {
      * Object of colors for logs
      */
     colors: {
-        // white
-        log: "\x1b[37m",
-        // yellow
-        warn: "\x1b[33m",
-        // red
-        error: "\x1b[31m",
+        log: "\x1b[37m", // white
+        warn: "\x1b[33m", // yellow
+        error: "\x1b[31m", // red
     },
     /**
      * @description
@@ -28,21 +25,15 @@ module.exports = {
      * @returns {void}
      */
     log: function (Type, Name, Message) {
-        // some basic param checks
         if (!Type) throw "Type is required.";
         if (!Name) throw "Name is required.";
         if (!Message) throw "Message is required.";
         if (!Type.match('log|warn|error')) throw "Type must be 'log', 'warn', or 'error'.";
 
-        // get the current time
-        let Time = new Date().toLocaleString([], { hour: 'numeric', minute: 'numeric', hour12: true });
+        let Time = new Date().toLocaleString("en-US", { hour: 'numeric', minute: 'numeric', hour12: true, timeZone: "America/New_York" });
 
-        // log the message in console
-        // this will output as (example): 
-        // 5:00 PM | [ERROR: Logs]: something went wrong
         console.log(this.colors[Type], `${Time} | [${Type.toUpperCase()}: ${Name}]: ${Message}`);
 
-        // return void
         return;
     },
 };
