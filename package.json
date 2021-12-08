@@ -1,6 +1,6 @@
 {
-  "name": "HOMOGENISIS.BOT",
-  "description": "**HOMOGENISIS.BOT is a Discord bot dedicated to the HOMOGENISIS Community Discord. *([Join Here](https://discord.gg/RyMkFzywsT))***",
+  "name": "homogenisis.bot",
+  "description": "HOMOGENISIS.BOT is a Discord bot dedicated to the HOMOGENISIS Community Discord. https://discord.gg/RyMkFzywsT",
   "main": "src/Start.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
