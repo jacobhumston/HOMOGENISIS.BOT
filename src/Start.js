@@ -22,9 +22,11 @@ Client.on("ready", async () => {
 });
 
 (async () => {
-    await Client.login(Configuration.client.token).catch(error => {
+    const Output = await Client.login(Configuration.client.token).catch(error => {
         Logs.log("error", "Start", error);
+        return;
     });
+    Logs.log("log", "Start", `Client logged in! Output: '${Output}'`)
 })();
 
 Logs.log("log", "Start", `Start.js has finished being executed in ${PrettyMilliseconds(new Date().getTime() - StartUpDate)}.`);
