@@ -31,9 +31,11 @@ module.exports = {
         let Guilds = await Client.guilds.fetch();
 
         // loop through the guilds of the client using the function that turns the collection into an array
-        for (const Guild of Guilds.values()) {
+        for (let Guild of Guilds.values()) {
             // check if the guild ID matches the one found in config 
             if (Guild.id !== Config.client.guildID) {
+                // we have to fetch the guild to get the leave function
+                Guild = await Guild.fetch();
                 // leave the guild if it doesnt match the ID found in config
                 const LeftGuild = await Guild.leave();
                 // log the guild that the bot left if log is enabled
