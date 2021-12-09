@@ -4,7 +4,7 @@ const
     Fetch = (...args) => import('node-fetch').then(({ default: fetch }) => fetch(...args)).catch(error => {
         return;
     }),
-    Configuration = require("../../Modules/Configuration/.js");
+    Configuration = require("../../Modules/Configuration.js");
 
 /**
  * @module 
