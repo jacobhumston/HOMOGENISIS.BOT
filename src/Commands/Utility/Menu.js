@@ -3,7 +3,8 @@ const
     FileSystem = require('fs'),
     Fetch = (...args) => import('node-fetch').then(({ default: fetch }) => fetch(...args)).catch(error => {
         return;
-    });
+    }),
+    Configuration = require("../../Modules/Configuration/.js");
 
 /**
  * @module 
@@ -33,7 +34,7 @@ module.exports = {
         const Embed = new Discord.MessageEmbed()
             .setColor("RANDOM")
             .setTitle(`Menu`)
-            .setDescription(`Hello <@${Interaction.user.id}>! HOMOGENISIS.BOT is a Discord bot dedicated to the HOMOGENISIS Community Discord. Below you can find more useful info.`)
+            .setDescription(`Hello <@${Interaction.user.id}>! HOMOGENISIS.BOT is a Discord bot dedicated to the HOMOGENISIS Community Discord. Below you can find more useful info.\n**Version:** \`${Configuration.version}\``)
             .addField("GitHub", `HOMOGENISIS.BOT is open souce, please [click here](https://github.com/jacobhumston/HOMOGENISIS.BOT) to go to the repository.\n\n**Latest commits:**\nDevelopment: [${BranchData.development["sha"].substring(0, 7)}](${BranchData.development["html_url"]}) \nCurrent: [${BranchData.current["sha"].substring(0, 7)}](${BranchData.current["html_url"]})`)
         
         await Interaction.editReply({ embeds: [Embed] }).catch(error => {

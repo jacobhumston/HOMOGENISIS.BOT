@@ -5,7 +5,7 @@
  * An object containing all of the bot's configuration
  */
 module.exports = {
-    version: "v1.2.pre-beta",
+    version: "v1.0.beta",
     permissions: {
         staffRoleID: "914287882817114123",
         developerUserID: "539194357706653696",
