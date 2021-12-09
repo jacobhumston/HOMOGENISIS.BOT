@@ -1,7 +1,5 @@
-# HOMOGENISIS.BOT
+# HOMOGENISIS.BOT [![CodeFactor](https://www.codefactor.io/repository/github/jacobhumston/homogenisis.bot/badge)](https://www.codefactor.io/repository/github/jacobhumston/homogenisis.bot)
 **HOMOGENISIS.BOT is a Discord bot dedicated to the HOMOGENISIS Community Discord. *([Join Here](https://discord.gg/RyMkFzywsT))***
-
-[![CodeFactor](https://www.codefactor.io/repository/github/jacobhumston/homogenisis.bot/badge)](https://www.codefactor.io/repository/github/jacobhumston/homogenisis.bot)
 
 > This repository is under the [GNU General Public License v3.0](./LICENSE).
 
