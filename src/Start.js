@@ -15,18 +15,18 @@ const Client = new Discord.Client({
 Client.on("ready", async () => {
     if (Configuration.client.guildCheckOnStartUp) {
         await GuildsCheck.leaveGuilds(Client, true).catch(error => {
-            Logs.log("error", "Start", error);
+            Logs.log("warn", "Start", "GuildsCheck ran into an error: " + error);
         });
     };
     Logs.log("log", "Start", "Client is ready!");
 });
 
 (async () => {
-    const Output = await Client.login(Configuration.client.token).catch(error => {
+    await Client.login(Configuration.client.token).catch(error => {
         Logs.log("error", "Start", error);
         return;
     });
-    Logs.log("log", "Start", `Client logged in! Output: '${Output}'`)
+    Logs.log("log", "Start", `Client logged in!`);
 })();
 
 Logs.log("log", "Start", `Start.js has finished being executed in ${PrettyMilliseconds(new Date().getTime() - StartUpDate)}.`);
