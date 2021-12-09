@@ -27,7 +27,7 @@ module.exports = {
                     
                     CommandFile = require("../Commands/" + File + "/" + CommandFile);
                     
-                    if (Interaction.command.name === CommandFile.name) {
+                    if (Interaction.command.name === CommandFile.usage) {
                         Command = CommandFile;
                         break Loop;
                     };
@@ -40,12 +40,12 @@ module.exports = {
              * @returns {Promise<void>}
              */
             async function respondError(error) {
-                let Developer = Client.users.fetch(Configuration.permissions.developerUserID).then(() => {
-                    Developer = Developer.tag;
-                }).catch(error => {
+                let Developer;
+                Developer = await Client.users.fetch(Configuration.permissions.developerUserID).catch(error => {
                     Developer = "Error finding user.";
                 });
-                await Interaction.channel.send(`<@${Interaction.user.id}>, Something went wrong, please use the command again. If this happens more then once, please notify \`${Developer}\` with the info below.\`\`\`\n${Object.toString(error)}\`\`\``).catch(error => {
+                if (Developer.tag) Developer = Developer.tag;
+                await Interaction.channel.send(`<@${Interaction.user.id}>, something went wrong, please use the command again. If this happens more then once, please notify \`${Developer}\` with the info below.\`\`\`\n${error}\`\`\``).catch(error => {
                     return;
                 });
                 return;

@@ -21,7 +21,7 @@ Client.on("ready", async () => {
         });
     };
     
-    // await Com
+    await CommandSetup.setupCommands(Client, true);
 
     await Client.user.setActivity({ type: "PLAYING", name: "Recollection" });
     Logs.log("log", "Start", "Client is ready!");

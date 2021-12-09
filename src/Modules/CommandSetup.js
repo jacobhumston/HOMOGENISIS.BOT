@@ -37,7 +37,7 @@ module.exports = {
                     CommandFile = require("../Commands/" + File + "/" + CommandFile);
 
                     const CommandObject = {};
-                    CommandObject.name = CommandFile.name;
+                    CommandObject.name = CommandFile.usage;
                     CommandObject.description = CommandFile.description;
 
                     Commands.push(CommandObject);
