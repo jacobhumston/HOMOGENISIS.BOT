@@ -105,3 +105,6 @@ dist
 
 # Token file
 token.json
+
+# Database file
+json.sqlite

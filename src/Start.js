@@ -1,6 +1,7 @@
 const
     Logs = require("./Modules/Logs.js"),
     GuildsCheck = require("./Modules/GuildsCheck.js"),
+    CommandSetup = require("./Modules/CommandSetup.js"),
     Configuration = require("./Modules/Configuration.js"),
     FileSystem = require('fs'),
     Discord = require('discord.js'),
@@ -19,6 +20,10 @@ Client.on("ready", async () => {
             Logs.log("warn", "Start", "GuildsCheck ran into an error: " + error);
         });
     };
+    
+    // await Com
+
+    await Client.user.setActivity({ type: "PLAYING", name: "Recollection" });
     Logs.log("log", "Start", "Client is ready!");
 });
 
