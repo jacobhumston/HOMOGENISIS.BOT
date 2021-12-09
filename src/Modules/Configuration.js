@@ -14,5 +14,6 @@ module.exports = {
         token: require("./../token.json").token,
         guildID: "837866184505294849",
         guildCheckOnStartUp: true,
+        embedColor: "0x383c44",
     },
 };

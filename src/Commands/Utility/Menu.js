@@ -4,7 +4,8 @@ const
     Fetch = (...args) => import('node-fetch').then(({ default: fetch }) => fetch(...args)).catch(error => {
         return;
     }),
-    Configuration = require("../../Modules/Configuration.js");
+    Configuration = require("../../Modules/Configuration.js"),
+    PrettyMilliseconds = require('pretty-ms');
 
 /**
  * @module 
@@ -30,12 +31,29 @@ module.exports = {
             current: await Fetch("https://api.github.com/repos/jacobhumston/HOMOGENISIS.BOT/commits/current").then(res => res.json()),
             development: await Fetch("https://api.github.com/repos/jacobhumston/HOMOGENISIS.BOT/commits/development").then(res => res.json()),
         };
-        
+
         const Embed = new Discord.MessageEmbed()
-            .setColor("RANDOM")
+            .setColor(Configuration.client.embedColor)
             .setTitle(`Menu`)
-            .setDescription(`Hello <@${Interaction.user.id}>! HOMOGENISIS.BOT is a Discord bot dedicated to the HOMOGENISIS Community Discord. Below you can find more useful info.\n**Version:** \`${Configuration.version}\``)
-            .addField("GitHub", `HOMOGENISIS.BOT is open souce, please [click here](https://github.com/jacobhumston/HOMOGENISIS.BOT) to go to the repository.\n\n**Latest commits:**\nDevelopment: [${BranchData.development["sha"].substring(0, 7)}](${BranchData.development["html_url"]}) \nCurrent: [${BranchData.current["sha"].substring(0, 7)}](${BranchData.current["html_url"]})`)
+            .setDescription(`Hello <@${Interaction.user.id}>! I'm a bot that is dedicated to this server specifically. Below you can find more useful info.\n> **Version:** \`${Configuration.version}\`\n> **Ping:** ${PrettyMilliseconds(Client.ws.ping)}\n> **Uptime:** ${PrettyMilliseconds(Client.uptime)}`)
+            .addField("GitHub", `HOMOGENISIS.BOT is open souce, please [click here](https://github.com/jacobhumston/HOMOGENISIS.BOT) to go to the repository.\n> **Latest commits:**\n> Development: [${BranchData.development["sha"].substring(0, 7)}](${BranchData.development["html_url"]})\n> Current: [${BranchData.current["sha"].substring(0, 7)}](${BranchData.current["html_url"]})`);
+
+        const CommandTexts = [];
+        for (const File of FileSystem.readdirSync("./src/Commands")) {
+            const Commands = [];
+            let Emoji;
+            for (let CommandFile of FileSystem.readdirSync("./src/Commands/" + File)) {
+                if (CommandFile.endsWith(".json")) {
+                    Emoji = require("../../Commands/" + File + "/" + CommandFile).emoji;
+                    continue;
+                };
+                CommandFile = require("../../Commands/" + File + "/" + CommandFile);
+                Commands.push(CommandFile);
+            };
+            CommandTexts.push(`**${Emoji} ${File}:** ${Commands.map(Command => `\`/${Command.usage}\``).join(", ")}`);
+        };
+
+        Embed.addField("Commands", CommandTexts.join("\n"));
         
         await Interaction.editReply({ embeds: [Embed] }).catch(error => {
             return;
