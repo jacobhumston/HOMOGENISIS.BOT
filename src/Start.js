@@ -2,6 +2,7 @@ const
     Logs = require("./Modules/Logs.js"),
     GuildsCheck = require("./Modules/GuildsCheck.js"),
     Configuration = require("./Modules/Configuration.js"),
+    FileSystem = require('fs'),
     Discord = require('discord.js'),
     PrettyMilliseconds = require('pretty-ms');
 
@@ -22,6 +23,14 @@ Client.on("ready", async () => {
 });
 
 (async () => {
+    for (const File of FileSystem.readdirSync("./src/Events")) {
+        const Event = require("./Events/" + File);
+        await Event.run(Client).catch(error => {
+            Logs.log("warn", `Events/${File.split(".")[0]}`, error);
+        });
+    };
+    Logs.log("log", "Start", "All events ran.");
+
     await Client.login(Configuration.client.token).catch(error => {
         Logs.log("error", "Start", error);
         return;
