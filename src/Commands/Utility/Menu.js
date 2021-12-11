@@ -43,18 +43,21 @@ module.exports = {
         for (const File of FileSystem.readdirSync("./src/Commands")) {
             const Commands = [];
             let Emoji;
+            let Description;
             for (let CommandFile of FileSystem.readdirSync("./src/Commands/" + File)) {
                 if (CommandFile.endsWith(".json")) {
-                    Emoji = require("../../Commands/" + File + "/" + CommandFile).emoji;
+                    const JSONFile = require("../../Commands/" + File + "/" + CommandFile);
+                    Emoji = JSONFile.emoji;
+                    Description = JSONFile.description;
                     continue;
                 };
                 CommandFile = require("../../Commands/" + File + "/" + CommandFile);
                 Commands.push(CommandFile);
             };
-            CommandTexts.push(`**${Emoji} ${File}:** ${Commands.map(Command => `\`/${Command.usage}\``).join(", ")}`);
+            CommandTexts.push(`**${Emoji} ${File}:** ${Commands.map(Command => `\`/${Command.usage}\``).join(", ")}\n- ${Description}`);
         };
 
-        Embed.addField("Commands", CommandTexts.join("\n"));
+        Embed.addField("Commands", CommandTexts.join("\n\n"));
         
         await Interaction.editReply({ embeds: [Embed] }).catch(error => {
             return;
