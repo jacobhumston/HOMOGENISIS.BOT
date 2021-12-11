@@ -40,6 +40,8 @@ module.exports = {
                     CommandObject.name = CommandFile.usage;
                     CommandObject.description = CommandFile.description;
 
+                    if (CommandFile.options) CommandObject.options = CommandFile.options;
+
                     Commands.push(CommandObject);
                 };
             };

@@ -9,7 +9,7 @@ const
 
 /**
  * @module 
- * Commands/Menu.js
+ * Commands/Utility/Menu.js
  * @description
  * Menu command
  */
@@ -19,11 +19,12 @@ module.exports = {
     description: "Help menu.",
     hidden: false,
     staffOnly: false,
+    options: null,
     /**
      * @description
      * Use the command
      * @param {typeof Discord.Client} Client - Discord client object
-     * @param {typeof Discord.BaseCommandInteraction} Interaction - Command interaction object
+     * @param {typeof Discord.CommandInteraction} Interaction - Command interaction object
      * @returns {Promise<void>}
      */
     use: async function(Client, Interaction) {
