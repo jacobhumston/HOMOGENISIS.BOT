@@ -31,6 +31,10 @@ module.exports = {
                     name: "Group",
                     value: "https://www.roblox.com/groups/9924945/HOMOGENISIS",
                 },
+                {
+                    name: "Recollection Wiki",
+                    value: "https://recollection-roblox.fandom.com/wiki/Recollection_Wiki",
+                },
             ],
         },
     ],
