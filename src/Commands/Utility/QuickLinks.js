@@ -25,7 +25,7 @@ module.exports = {
                 },
                 {
                     name: "Discord Invite",
-                    value: "https://discord.gg/RyMkFzywsT",
+                    value: "https://discord.gg/RyMkFzywsT\nhttps://discord.gg/recollection",
                 },
                 {
                     name: "Group",
