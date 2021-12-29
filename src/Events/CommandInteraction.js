@@ -55,8 +55,20 @@ module.exports = {
             await Interaction.deferReply({ ephemeral: Command.hidden }).catch(async error => {
                 await respondError(error);
             });
+
+            if (Command.staffOnly) {
+                if (!Interaction.member.roles.cache.some(role => role.id === Configuration.permissions.staffRoleID)) {
+                    await Interaction.editReply("Only staff can use this command.").catch(async error => {
+                        await respondError(error);
+                        return;
+                    });
+                    return;
+                };
+            };
+
             await Command.use(Client, Interaction).catch(async error => {
                 await respondError(error);
+                return;
             });
         });
         return;

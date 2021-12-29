@@ -1,3 +1,4 @@
+const { client } = require("./Configuration.js");
 const
     LogsModule = require("./Logs.js"),
     FileSystem = require('fs'),
@@ -39,6 +40,8 @@ module.exports = {
                     const CommandObject = {};
                     CommandObject.name = CommandFile.usage;
                     CommandObject.description = CommandFile.description;
+
+                    if (CommandFile.options) CommandObject.options = CommandFile.options;
 
                     Commands.push(CommandObject);
                 };
