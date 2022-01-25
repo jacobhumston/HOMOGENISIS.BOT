@@ -14,7 +14,7 @@ module.exports = {
      * @description
      * Leave any guilds not found in config
      * @example
-     * GuildsCheck.leaveGuilds(Discord.Client, require("./Configuration.js"), true);
+     * GuildsCheck.leaveGuilds(Discord.Client, true);
      * @param {typeof Discord.Client} Client - Discord client object
      * @param {boolean} [Log=false] - Log actions
      * @returns {Promise<void>}
