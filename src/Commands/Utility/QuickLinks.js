@@ -1,7 +1,7 @@
-const Discord = require('discord.js');
+const Discord = require("discord.js")
 
 /**
- * @module 
+ * @module
  * Commands/Utility/QuickLinks.js
  * @description
  * QuickLinks command
@@ -45,7 +45,7 @@ module.exports = {
      * @param {typeof Discord.CommandInteraction} Interaction - Command interaction object
      * @returns {Promise<void>}
      */
-    use: async function(Client, Interaction) {
-        Interaction.editReply(Interaction.options.getString("link"));
+    use: async function (Client, Interaction) {
+        Interaction.editReply(Interaction.options.getString("link"))
     },
-};
+}

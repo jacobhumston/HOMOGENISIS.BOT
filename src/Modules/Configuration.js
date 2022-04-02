@@ -16,4 +16,4 @@ module.exports = {
         guildCheckOnStartUp: true,
         embedColor: "0x383c44",
     },
-};
+}

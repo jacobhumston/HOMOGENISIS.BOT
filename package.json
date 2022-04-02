@@ -3,7 +3,8 @@
   "description": "HOMOGENISIS.BOT is a Discord bot dedicated to the HOMOGENISIS Community Discord. https://discord.gg/RyMkFzywsT",
   "main": "src/Start.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "node src/Start.js"
   },
   "repository": {
     "type": "git",
