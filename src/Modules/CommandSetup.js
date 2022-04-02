@@ -1,4 +1,3 @@
-const { client } = require("./Configuration.js")
 const LogsModule = require("./Logs.js"),
     FileSystem = require("fs"),
     Configuration = require("./Configuration.js"),
