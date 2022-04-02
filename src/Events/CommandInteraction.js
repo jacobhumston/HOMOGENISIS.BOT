@@ -21,15 +21,10 @@ module.exports = {
 
             let Command
             Loop: for (const File of FileSystem.readdirSync("./src/Commands")) {
-                for (let CommandFile of FileSystem.readdirSync(
-                    "./src/Commands/" + File
-                )) {
+                for (let CommandFile of FileSystem.readdirSync("./src/Commands/" + File)) {
                     if (CommandFile.endsWith(".json")) continue
 
-                    CommandFile = require("../Commands/" +
-                        File +
-                        "/" +
-                        CommandFile)
+                    CommandFile = require("../Commands/" + File + "/" + CommandFile)
 
                     if (Interaction.command.name === CommandFile.usage) {
                         Command = CommandFile
@@ -45,39 +40,24 @@ module.exports = {
              */
             async function respondError(error) {
                 let Developer
-                Developer = await Client.users
-                    .fetch(Configuration.permissions.developerUserID)
-                    .catch((error) => {
-                        Developer = "Error finding user."
-                    })
+                Developer = await Client.users.fetch(Configuration.permissions.developerUserID).catch((error) => {
+                    Developer = "Error finding user."
+                })
                 if (Developer.tag) Developer = Developer.tag
-                await Interaction.channel
-                    .send(
-                        `<@${Interaction.user.id}>, something went wrong, please use the command again. If this happens more then once, please notify \`${Developer}\` with the info below.\`\`\`\n${error}\`\`\``
-                    )
-                    .catch((error) => {
-                        return
-                    })
+                await Interaction.channel.send(`<@${Interaction.user.id}>, something went wrong, please use the command again. If this happens more then once, please notify \`${Developer}\` with the info below.\`\`\`\n${error}\`\`\``).catch((error) => {
+                    return
+                })
                 return
             }
 
             if (!Command) return
-            await Interaction.deferReply({ ephemeral: Command.hidden }).catch(
-                async (error) => {
-                    await respondError(error)
-                }
-            )
+            await Interaction.deferReply({ ephemeral: Command.hidden }).catch(async (error) => {
+                await respondError(error)
+            })
 
             if (Command.staffOnly) {
-                if (
-                    !Interaction.member.roles.cache.some(
-                        (role) =>
-                            role.id === Configuration.permissions.staffRoleID
-                    )
-                ) {
-                    await Interaction.editReply(
-                        "Only staff can use this command."
-                    ).catch(async (error) => {
+                if (!Interaction.member.roles.cache.some((role) => role.id === Configuration.permissions.staffRoleID)) {
+                    await Interaction.editReply("Only staff can use this command.").catch(async (error) => {
                         await respondError(error)
                         return
                     })

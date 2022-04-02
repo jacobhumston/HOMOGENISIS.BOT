@@ -25,31 +25,22 @@ module.exports = {
         if (!Log) Log = false
 
         try {
-            const Guild = await Client.guilds.fetch(
-                Configuration.client.guildID
-            )
+            const Guild = await Client.guilds.fetch(Configuration.client.guildID)
             const GuildCommandManager = Guild.commands
             const Commands = []
 
-            if (Log)
-                LogsModule.log("log", "CommandSetup", `Command setup started!`)
+            if (Log) LogsModule.log("log", "CommandSetup", `Command setup started!`)
 
             for (const File of FileSystem.readdirSync("./src/Commands")) {
-                for (let CommandFile of FileSystem.readdirSync(
-                    "./src/Commands/" + File
-                )) {
+                for (let CommandFile of FileSystem.readdirSync("./src/Commands/" + File)) {
                     if (CommandFile.endsWith(".json")) continue
-                    CommandFile = require("../Commands/" +
-                        File +
-                        "/" +
-                        CommandFile)
+                    CommandFile = require("../Commands/" + File + "/" + CommandFile)
 
                     const CommandObject = {}
                     CommandObject.name = CommandFile.usage
                     CommandObject.description = CommandFile.description
 
-                    if (CommandFile.options)
-                        CommandObject.options = CommandFile.options
+                    if (CommandFile.options) CommandObject.options = CommandFile.options
 
                     Commands.push(CommandObject)
                 }
@@ -60,8 +51,7 @@ module.exports = {
             LogsModule.log("error", "CommandSetup", error)
         }
 
-        if (Log)
-            LogsModule.log("log", "CommandSetup", `Command setup finished.`)
+        if (Log) LogsModule.log("log", "CommandSetup", `Command setup finished.`)
 
         return
     },

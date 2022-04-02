@@ -30,12 +30,7 @@ module.exports = {
             if (Guild.id !== Configuration.client.guildID) {
                 Guild = await Guild.fetch()
                 const LeftGuild = await Guild.leave()
-                if (Log)
-                    LogsModule.log(
-                        "log",
-                        "GuildsCheck",
-                        `Left guild called ${LeftGuild.name}...`
-                    )
+                if (Log) LogsModule.log("log", "GuildsCheck", `Left guild called ${LeftGuild.name}...`)
             }
         }
 

@@ -3,5 +3,6 @@
     "tabWidth": 4,
     "semi": false,
     "singleQuote": false,
-    "preserve": "always"
+    "preserve": "always",
+    "printWidth": 300
 }

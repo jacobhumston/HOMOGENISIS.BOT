@@ -31,23 +31,13 @@ module.exports = {
             postfix: ".json",
             prefix: "guildmembers",
         })
-        FileSystem.writeFileSync(
-            tmpobj.name,
-            JSON.stringify(GuildMembers.toJSON()),
-            "utf-8"
-        )
+        FileSystem.writeFileSync(tmpobj.name, JSON.stringify(GuildMembers.toJSON()), "utf-8")
         files.push({ attachment: tmpobj.name, name: "guildmembers.json" })
         const tmpobj2 = tmp.fileSync({ postfix: ".json", prefix: "guild" })
-        FileSystem.writeFileSync(
-            tmpobj2.name,
-            JSON.stringify(Interaction.guild),
-            "utf-8"
-        )
+        FileSystem.writeFileSync(tmpobj2.name, JSON.stringify(Interaction.guild), "utf-8")
         files.push({ attachment: tmpobj2.name, name: "guild.json" })
         Interaction.editReply({
-            content: `Fetched files in ${PrettyMilliseconds(
-                new Date().getTime() - StartTime
-            )}.`,
+            content: `Fetched files in ${PrettyMilliseconds(new Date().getTime() - StartTime)}.`,
             files: files,
         })
     },

@@ -41,10 +41,4 @@ Client.on("ready", async () => {
     Logs.log("log", "Start", `Client logged in!`)
 })()
 
-Logs.log(
-    "log",
-    "Start",
-    `Start.js has finished being executed in ${PrettyMilliseconds(
-        new Date().getTime() - StartUpDate
-    )}.`
-)
+Logs.log("log", "Start", `Start.js has finished being executed in ${PrettyMilliseconds(new Date().getTime() - StartUpDate)}.`)

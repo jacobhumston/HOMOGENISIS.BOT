@@ -28,8 +28,7 @@ module.exports = {
         if (!Type) throw "Type is required."
         if (!Name) throw "Name is required."
         if (!Message) throw "Message is required."
-        if (!Type.match("log|warn|error"))
-            throw "Type must be 'log', 'warn', or 'error'."
+        if (!Type.match("log|warn|error")) throw "Type must be 'log', 'warn', or 'error'."
 
         let Time = new Date().toLocaleString("en-US", {
             hour: "numeric",
@@ -38,10 +37,7 @@ module.exports = {
             timeZone: "America/New_York",
         })
 
-        console.log(
-            this.colors[Type],
-            `${Time} | [${Type.toUpperCase()}: ${Name}]: ${Message}`
-        )
+        console.log(this.colors[Type], `${Time} | [${Type.toUpperCase()}: ${Name}]: ${Message}`)
 
         return
     },
