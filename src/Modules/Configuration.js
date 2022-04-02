@@ -16,4 +16,5 @@ module.exports = {
         guildCheckOnStartUp: true,
         embedColor: "0x383c44",
     },
+    catsDirectory: "src/Images/Cats",
 }
