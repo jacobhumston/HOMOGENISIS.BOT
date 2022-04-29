@@ -19,7 +19,7 @@
   "homepage": "https://github.com/jacobhumston/HOMOGENISIS.BOT#readme",
   "dependencies": {
     "discord.js": "^13.6.0",
-    "node-fetch": "^3.2.3",
+    "node-fetch": "^3.2.4",
     "pretty-ms": "^7.0.1",
     "tmp": "^0.2.1"
   },
